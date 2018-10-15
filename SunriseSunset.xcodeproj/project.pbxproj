@@ -17,6 +17,7 @@
 		2C1EC0FD2173745000EED1F6 /* Soruce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1EC0FC2173745000EED1F6 /* Soruce.swift */; };
 		2C1EC0FF2173747700EED1F6 /* TimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1EC0FE2173747700EED1F6 /* TimeModel.swift */; };
 		2C1EC101217375D400EED1F6 /* CitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1EC100217375D400EED1F6 /* CitiesTableViewController.swift */; };
+		2C1EC1032173EB8200EED1F6 /* NamesOfCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1EC1022173EB8200EED1F6 /* NamesOfCity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		2C1EC0FC2173745000EED1F6 /* Soruce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Soruce.swift; sourceTree = "<group>"; };
 		2C1EC0FE2173747700EED1F6 /* TimeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeModel.swift; sourceTree = "<group>"; };
 		2C1EC100217375D400EED1F6 /* CitiesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesTableViewController.swift; sourceTree = "<group>"; };
+		2C1EC1022173EB8200EED1F6 /* NamesOfCity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamesOfCity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 			children = (
 				2C1EC0F52173739100EED1F6 /* NetworkDataManager.swift */,
 				2C1EC0F8217373FE00EED1F6 /* City.swift */,
+				2C1EC1022173EB8200EED1F6 /* NamesOfCity.swift */,
 				2C1EC0FA2173742F00EED1F6 /* Location.swift */,
 				2C1EC0FC2173745000EED1F6 /* Soruce.swift */,
 				2C1EC0FE2173747700EED1F6 /* TimeModel.swift */,
@@ -164,6 +167,7 @@
 				2C1EC0FF2173747700EED1F6 /* TimeModel.swift in Sources */,
 				2C1EC0FB2173742F00EED1F6 /* Location.swift in Sources */,
 				2C1EC0F9217373FE00EED1F6 /* City.swift in Sources */,
+				2C1EC1032173EB8200EED1F6 /* NamesOfCity.swift in Sources */,
 				2C1EC0F62173739100EED1F6 /* NetworkDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,9 +12,9 @@ class NetworkDataManager {
     static let sharedNetworkDataManager = NetworkDataManager()
     
     
-    func getAllInfo(complition: @escaping (_ times: Soruce)->()) {
-        
-        let baseURL = "https://api.sunrise-sunset.org/json?lat=49.842&lng=24.0316&date=today"
+    func getAllInfo(location: Location, complition: @escaping ( _ times: Soruce)->()) {
+        var baseURL = "https://api.sunrise-sunset.org/json?lat=" + location.latitude + "&lng=" + location.longitude + "&date=today"
+        baseURL = "https://api.sunrise-sunset.org/json?lat=36.7201600&lng=-4.4203400&date=today"
         guard let url = URL(string: baseURL) else {
             return
         }
@@ -34,6 +34,7 @@ class NetworkDataManager {
                 let times = try JSONDecoder().decode(Soruce.self, from: data)
                 
                 complition(times)
+                print(times)
                 
             } catch let jsonErr {
                 print("Error serializing json:", jsonErr)

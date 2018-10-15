@@ -8,23 +8,17 @@
 
 import UIKit
 
+var currentTime = TimeModel(sunrise: "", sunset: "", solar_noon: "", nautical_twilight_end: "") 
 
 class CitiesTableViewController: UITableViewController {
     
-    var localTime = TimeModel.init(sunrise: "", sunset: "", solar_noon: "", nautical_twilight_end: "")
-    
-    var cityLocation: [City] = [City(name:  "Lviv", location: Location(latitude: "", longitude: "", timeZone: +3))]
+    var cityLocation: [City] = [City(name:  .Lviv, location: Location(latitude: "49.842", longitude: "24.0316", timeZone: +3)),
+                                City(name: .Paris, location: Location(latitude: "48.859489", longitude: "2.320582", timeZone: +2)),
+                                City(name: .Kyiv, location: Location(latitude: "50.351101", longitude: "30.888017", timeZone: +2))]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NetworkDataManager.sharedNetworkDataManager.getAllInfo(complition: {times in
-            DispatchQueue.main.async {
-                self.localTime = times.results
-                self.tableView.reloadData()
-            }
-        })
-
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -41,10 +35,29 @@ class CitiesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cityCell", for: indexPath)
         let currentCity = cityLocation[indexPath.row]
-        cell.textLabel?.text = currentCity.name + "—" + localTime.sunrise
+        
+//        currentTime = getTimes(location: currentCity.location, indexPath: indexPath)
+        cell.textLabel?.text = currentCity.name.rawValue + " — " + getTimes(location: currentCity.location, indexPath: indexPath).sunrise
+        
+        
+
+        
+//        currentTime = getTimes(location: currentCity.location)
+    
         return cell
     }
     
+    
+    func getTimes(location: Location, indexPath: IndexPath) -> TimeModel {
+        
+        NetworkDataManager.sharedNetworkDataManager.getAllInfo(location: location, complition: {times in
+            DispatchQueue.main.async {
+                currentTime = times.results
+//                self.tableView.reloadData()
+            }
+        })
+        return currentTime
+    }
 
     /*
     // Override to support conditional editing of the table view.
